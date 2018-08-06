@@ -5,6 +5,8 @@ const defaultConfig = {
   base: 'master',
   checkOnly: false,
   next: 1,
+  day: 'Mon',
+  template: 'feature/${yyyy}${mm}${dd}',
 };
 
 class Tedder {
