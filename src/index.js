@@ -5,6 +5,8 @@ const defaultConfig = {
   base: 'master',
   checkOnly: false,
   next: 1,
+  template: 'feature/${yyyy}${mm}${dd}',
+  day: 'Mon',
 };
 
 class Tedder {
@@ -14,7 +16,6 @@ class Tedder {
       ...config,
     };
     this.gitter = gitter;
-    this._branch = 'aaaa';
     this._branch = format(this.config.template, this._date);
   }
 

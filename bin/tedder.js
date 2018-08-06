@@ -4,15 +4,19 @@ let program = require('commander'),
   gitter = require('simple-git/promise')(),
   Tedder = require('../src/index'),
   { bingo, show } = require('../src/util'),
-  chalk = require('chalk');
+  pack = require('../package.json');
+chalk = require('chalk');
 
 program
-  .version('0.0.1', '-v, --version')
+  .version(pack.version, '-v, --version')
   .option('-b, --base [base]', 'base branch to branch off - default to master')
   .option('-r, --remote [remote]', 'remote name - default to origin')
-  .option('-d, --day [day]', 'specify day')
+  .option('-d, --day [day]', 'specify day -  default to Monday')
   .option('-n, --next [next]', 'specify round, default to 1')
-  .option('-t, --template [template]', 'specify template')
+  .option(
+    '-t, --template [template]',
+    'specify template, default to feature/${yyyy}${mm}${dd}'
+  )
   .option(
     '-c, --checkOnly',
     'only checks whether the remote branch exists - default to false'
