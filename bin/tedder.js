@@ -4,10 +4,11 @@ let program = require('commander'),
   gitter = require('simple-git/promise')(),
   Tedder = require('../src/index'),
   { bingo, show } = require('../src/util'),
+  pkg = require('../package.json'),
   chalk = require('chalk');
 
 program
-  .version('0.0.1', '-v, --version')
+  .version(pkg.version, '-v, --version')
   .option('-b, --base [base]', 'base branch to branch off - default to master')
   .option('-r, --remote [remote]', 'remote name - default to origin')
   .option('-d, --day [day]', 'specify day')

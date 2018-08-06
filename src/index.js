@@ -14,7 +14,6 @@ class Tedder {
       ...config,
     };
     this.gitter = gitter;
-    this._branch = 'aaaa';
     this._branch = format(this.config.template, this._date);
   }
 
