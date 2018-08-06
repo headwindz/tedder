@@ -17,6 +17,7 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "commander": "^2.15.1",
+    "cosmiconfig": "^5.0.5",
     "cowsay": "^1.3.1",
     "lodash": "^4.17.10",
     "lolcatjs": "^2.3.1",

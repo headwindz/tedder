@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
-let program = require('commander'),
+const program = require('commander'),
   gitter = require('simple-git/promise')(),
   Tedder = require('../src/index'),
   { bingo, show } = require('../src/util'),
   pkg = require('../package.json'),
+  explorer = require('cosmiconfig')('tedder'),
   chalk = require('chalk');
 
 program
@@ -23,7 +24,12 @@ program
       if (!isRepo) {
         return console.log(chalk.hex('#cc0000')('😒 NOT a git repo!'));
       }
-      new Tedder(gitter, options).kickoff(() => {
+      const searchedFor = explorer.searchSync();
+      const config = (searchedFor && searchedFor.config) || {};
+      new Tedder(gitter, {
+        ...config, // terminal config take precedence
+        ...options,
+      }).kickoff(() => {
         if (bingo()) {
           show('B I N G O !');
         }

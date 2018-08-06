@@ -28,7 +28,7 @@ class Tedder {
   }
 
   async checkRemote() {
-    log('💸 checking remote branch...');
+    log(`💸 checking remote branch...: ${this._branch}`);
     let { gitter, config } = this;
     let result = await gitter.raw([
       'ls-remote',
