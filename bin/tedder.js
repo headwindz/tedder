@@ -3,7 +3,6 @@
 const program = require('commander'),
   gitter = require('simple-git/promise')(),
   Tedder = require('../src/index'),
-  { bingo, show } = require('../src/util'),
   pkg = require('../package.json'),
   explorer = require('cosmiconfig')('tedder'),
   chalk = require('chalk');
@@ -29,11 +28,7 @@ program
       new Tedder(gitter, {
         ...config, // terminal config take precedence
         ...options,
-      }).kickoff(() => {
-        if (bingo()) {
-          show('B I N G O !');
-        }
-      });
+      }).start();
     });
   })
   .parse(process.argv);

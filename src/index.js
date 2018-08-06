@@ -1,4 +1,4 @@
-const { format, log, getDate } = require('./util');
+const { format, log, getDate, bingo, show } = require('./util');
 
 const defaultConfig = {
   remote: 'origin',
@@ -72,20 +72,25 @@ class Tedder {
     await this.syncToRemote();
   }
 
-  async kickoff(cb) {
+  async kickoff() {
     let { config, _branch, gitter } = this;
     let isExists = await this.checkRemote();
     if (config.checkOnly) {
-      return cb();
+      return;
     }
     if (isExists) {
       // remote exists, fetch and then checkout
-      await this.fetchAndCheckout();
-      return cb();
+      return await this.fetchAndCheckout();
     }
     // create new branch and push to remote
-    await this.createAndPush();
-    return cb();
+    return await this.createAndPush();
+  }
+
+  async start() {
+    await this.kickoff();
+    if (bingo()) {
+      show('B I N G O !');
+    }
   }
 }
 

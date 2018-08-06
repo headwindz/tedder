@@ -60,7 +60,7 @@ function show(text) {
 }
 
 function bingo() {
-  return Math.random() > 0.9;
+  return Math.random() > 0.95;
 }
 
 module.exports = {
