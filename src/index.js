@@ -6,7 +6,7 @@ const defaultConfig = {
   checkOnly: false,
   next: 1,
   day: 'Mon',
-  template: 'feature/${yyyy}${mm}${dd}',
+  template: 'feature/[yyyy][mm][dd]',
 };
 
 class Tedder {
@@ -41,6 +41,19 @@ class Tedder {
     return isExists;
   }
 
+  async checkLocal() {
+    let { gitter, config } = this;
+    let result = await gitter.raw(['show-ref', `refs/heads/${this._branch}`]);
+    return result != null;
+  }
+
+  async checkout() {
+    let { gitter, _branch } = this;
+    log('📍 checkout...', 'yellow');
+    await gitter.raw(['checkout', _branch]);
+    log('📍 checkout done', 'yellow');
+  }
+
   async fetchAndCheckout() {
     let { gitter, _branch } = this;
 
@@ -48,16 +61,20 @@ class Tedder {
     await gitter.raw(['fetch']);
     log('😈 fetching remote branch done', 'cyan');
 
-    log('📍 checkout...', 'yellow');
-    await gitter.raw(['checkout', _branch]);
-    log('📍 checkout done', 'yellow');
+    await this.checkout();
   }
 
-  async createNewBranch() {
+  async switchBranch() {
     let { gitter, _branch, config } = this;
-    log(`👊 creating new branch...: ${_branch}`, 'red');
-    await gitter.raw(['checkout', '-b', _branch, config.base]);
-    log(`👊 branch ${_branch} created`, 'red');
+    let exists = await this.checkLocal();
+    if (exists) {
+      log(`👊 local branch ${_branch} exists, checking out...`, 'red');
+      await this.checkout();
+    } else {
+      log(`👊 creating new branch...: ${_branch}`, 'red');
+      await gitter.raw(['checkout', '-b', _branch, config.base]);
+      log(`👊 branch ${_branch} created`, 'red');
+    }
   }
 
   async syncToRemote() {
@@ -68,7 +85,7 @@ class Tedder {
   }
 
   async createAndPush() {
-    await this.createNewBranch();
+    await this.switchBranch();
     await this.syncToRemote();
   }
 
