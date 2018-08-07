@@ -14,7 +14,7 @@ program
     'base branch to branch off - default to origin/master'
   )
   .option('-r, --remote [remote]', 'remote name - default to origin')
-  .option('-d, --day [day]', 'specify day')
+  .option('-d, --day [day]', 'specify day -  default to Monday')
   .option('-n, --next [next]', 'specify round, default to 1')
   .option('-t, --template [template]', 'specify template')
   .option(

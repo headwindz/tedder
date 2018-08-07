@@ -7,7 +7,7 @@
     "test": "node ./bin/test.js"
   },
   "bin": {
-    "tedder": "node ./bin/tedder.js"
+    "tedder": "./bin/tedder.js"
   },
   "keywords": [
     "tedder",
