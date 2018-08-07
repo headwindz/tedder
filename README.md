@@ -5,3 +5,4 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/n0ruSh/tedder/blob/master/LICENSE)
 [![npm](https://img.shields.io/badge/version-1.0.0-orange.svg)](https://www.npmjs.com/package/tedder)
 [![Downloads](https://img.shields.io/npm/dm/tedder.svg)](https://npmcharts.com/compare/tedder?minimal=true)
+[![node](https://img.shields.io/badge/node-%3E%3D8-blue.svg)](https://nodejs.org/en/)
