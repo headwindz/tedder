@@ -1,6 +1,6 @@
 {
   "name": "tedder",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "automatic management of git branch for scrum",
   "main": "index.js",
   "scripts": {
