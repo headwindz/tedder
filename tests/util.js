@@ -19,19 +19,19 @@ describe('util/format', function() {
   let date = new Date(1533525261339); // 'Mon Aug 06 2018 11:14:21 GMT+0800 (China Standard Time)'
 
   it('it should be ok for yyyy', function() {
-    return format('feature/${yyyy}', date).should.be.equal('feature/2018');
+    return format('feature/[yyyy]', date).should.be.equal('feature/2018');
   });
   it('it should case insentative', function() {
-    return format('feature/${YYYY}', date).should.be.equal('feature/2018');
+    return format('feature/[YYYY]', date).should.be.equal('feature/2018');
   });
   it('it should be ok for mm', function() {
-    return format('feature/${mm}', date).should.be.equal('feature/08');
+    return format('feature/[mm]', date).should.be.equal('feature/08');
   });
   it('it should be ok for dd', function() {
-    return format('feature/${dd}', date).should.be.equal('feature/06');
+    return format('feature/[dd]', date).should.be.equal('feature/06');
   });
   it('it should be ok for all', function() {
-    return format('feature/${yyyy}${mm}${dd}', date).should.be.equal(
+    return format('feature/[yyyy][mm][dd]', date).should.be.equal(
       'feature/20180806'
     );
   });
