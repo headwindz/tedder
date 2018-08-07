@@ -21,17 +21,16 @@ program
     '-c, --checkOnly',
     'only checks whether the remote branch exists - default to false'
   )
-  .action(options => {
-    gitter.checkIsRepo().then(isRepo => {
-      if (!isRepo) {
-        return console.log(chalk.hex('#cc0000')('😒 NOT a git repo!'));
-      }
-      const searchedFor = explorer.searchSync();
-      const config = (searchedFor && searchedFor.config) || {};
-      new Tedder(gitter, {
-        ...config, // terminal config take precedence
-        ...options,
-      }).start();
-    });
-  })
   .parse(process.argv);
+
+gitter.checkIsRepo().then(isRepo => {
+  if (!isRepo) {
+    return console.log(chalk.hex('#cc0000')('😒 NOT a git repo!'));
+  }
+  const searchedFor = explorer.searchSync();
+  const config = (searchedFor && searchedFor.config) || {};
+  new Tedder(gitter, {
+    ...config, // terminal config take precedence
+    ...program,
+  }).start();
+});
