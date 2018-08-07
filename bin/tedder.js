@@ -9,7 +9,10 @@ const program = require('commander'),
 
 program
   .version(pkg.version, '-v, --version')
-  .option('-b, --base [base]', 'base branch to branch off - default to master')
+  .option(
+    '-b, --base [base]',
+    'base branch to branch off - default to origin/master'
+  )
   .option('-r, --remote [remote]', 'remote name - default to origin')
   .option('-d, --day [day]', 'specify day')
   .option('-n, --next [next]', 'specify round, default to 1')

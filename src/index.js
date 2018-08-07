@@ -2,7 +2,7 @@ const { format, log, getDate, bingo, show } = require('./util');
 
 const defaultConfig = {
   remote: 'origin',
-  base: 'master',
+  base: 'origin/master',
   checkOnly: false,
   next: 1,
   day: 'Mon',
