@@ -1,13 +1,13 @@
 {
   "name": "tedder",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "automatic management of git branch for scrum",
   "main": "index.js",
   "scripts": {
     "test": "node ./bin/test.js"
   },
   "bin": {
-    "tedder": "./bin/tedder.js"
+    "tedder": "node ./bin/tedder.js"
   },
   "keywords": [
     "tedder",
