@@ -18,7 +18,7 @@ function format(template, date) {
     m = date.getMonth() + 1,
     d = date.getDate();
 
-  return template.replace(/\$\{(yy|yyyy|mm|dd)\}/gi, (match, group) => {
+  return template.replace(/\[(yy|yyyy|mm|dd)\]/gi, (match, group) => {
     switch (group.toLowerCase()) {
       case 'yyyy':
         return y;
