@@ -1,13 +1,20 @@
 {
   "name": "tedder",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "automatic management of git branch for scrum",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "node ./bin/test.js"
   },
   "bin": {
     "tedder": "./bin/tedder.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/n0ruSh/tedder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/n0ruSh/tedder/issues"
   },
   "keywords": [
     "tedder",
