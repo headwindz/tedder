@@ -1,3 +1,5 @@
+![Logo](./src/logo/tedder.png)
+
 > **Tedder - a scrum git branch manager**
 
 [![Build Status](https://travis-ci.com/n0ruSh/tedder.svg?branch=master)](https://travis-ci.com/n0ruSh/tedder)
