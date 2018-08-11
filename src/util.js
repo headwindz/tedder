@@ -1,8 +1,8 @@
 const padStart = require('lodash/padStart'),
   chalk = require('chalk'),
   cowsay = require('cowsay'),
-  lolcatjs = require('lolcatjs');
-DAYS_PER_WEEK = 7;
+  lolcatjs = require('lolcatjs'),
+  DAYS_PER_WEEK = 7;
 
 const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 

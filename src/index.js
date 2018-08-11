@@ -42,7 +42,7 @@ class Tedder {
   }
 
   async checkLocal() {
-    let { gitter, config } = this;
+    let { gitter } = this;
     let result = await gitter.raw(['show-ref', `refs/heads/${this._branch}`]);
     return result != null;
   }
@@ -55,7 +55,7 @@ class Tedder {
   }
 
   async fetchAndCheckout() {
-    let { gitter, _branch } = this;
+    let { gitter } = this;
 
     log('😈 fetching remote branch', 'cyan');
     await gitter.raw(['fetch']);
@@ -90,7 +90,7 @@ class Tedder {
   }
 
   async kickoff() {
-    let { config, _branch, gitter } = this;
+    let { config } = this;
     let isExists = await this.checkRemote();
     if (config.checkOnly) {
       return;
