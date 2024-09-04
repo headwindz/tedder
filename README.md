@@ -2,9 +2,9 @@
 
 > **Tedder - a scrum git branch manager**
 
-[![Build Status](https://travis-ci.com/n0ruSh/tedder.svg?branch=master)](https://travis-ci.com/n0ruSh/tedder)
+[![Build Status](https://travis-ci.com/headwindz/tedder.svg?branch=master)](https://travis-ci.com/headwindz/tedder)
 [![Code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/n0ruSh/tedder/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/headwindz/tedder/blob/master/LICENSE)
 [![npm](https://img.shields.io/badge/version-1.0.7-orange.svg)](https://www.npmjs.com/package/tedder)
 [![Downloads](https://img.shields.io/npm/dm/tedder.svg)](https://npmcharts.com/compare/tedder?minimal=true)
 
@@ -29,7 +29,7 @@ _Note: You can install and run tedder both locally and globally._
 
 Specify the base branch to branch off when creating the new scrum branch.
 
-|    Default    |  CLI Override  | CLI shortcut Overide | Config Override |
+|    Default    |  CLI Override  | CLI shortcut Override | Config Override |
 | :-----------: | :------------: | :------------------: | :-------------: |
 | origin/master | --base \<str\> |      -b \<str\>      |  base: \<str\>  |
 
@@ -68,7 +68,7 @@ Specify the tempalte for computing branch name. **\[\]** is used as delimiter:
 
 E.g. if your scum is targeted for 16th/Aug/2018 and your template is `feature/[yyyy][mm][dd]` then tedder will create the branch `feature/2018/08/16` fro you.
 
-|           Default            |    CLI Override    | CLI shortcut Overide |  Config Override  |
+|           Default            |    CLI Override    | CLI shortcut Override |  Config Override  |
 | :--------------------------: | :----------------: | :------------------: | :---------------: |
 | feature/\[yyyy\]\[mm\]\[dd\] | --template \<str\> |      -t \<str\>      | template: \<str\> |
 
@@ -76,7 +76,7 @@ E.g. if your scum is targeted for 16th/Aug/2018 and your template is `feature/[y
 
 Whether only check remote branch exists
 
-| Default | CLI Override | CLI shortcut Overide | Config Override |
+| Default | CLI Override | CLI shortcut Override | Config Override |
 | :-----: | :----------: | :------------------: | :-------------: |
 |  false  | --checkOnly  |          -c          | checkOnly: true |
 
@@ -116,7 +116,7 @@ E.g. basic rc config:
 
 ## Mix CLI and configuration file
 
-You can mix the usage of cli and configuration file. The options from cli take precendence over those from configuration file.
+You can mix the usage of cli and configuration file. The options from cli take precedence over those from configuration file.
 
 # Last but not least
 
