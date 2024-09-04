@@ -2,7 +2,6 @@
 
 > **Tedder - a scrum git branch manager**
 
-[![Build Status](https://travis-ci.com/headwindz/tedder.svg?branch=master)](https://travis-ci.com/headwindz/tedder)
 [![Code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/headwindz/tedder/blob/master/LICENSE)
 [![npm](https://img.shields.io/badge/version-1.0.7-orange.svg)](https://www.npmjs.com/package/tedder)
